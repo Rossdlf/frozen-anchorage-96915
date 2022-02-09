@@ -3,7 +3,7 @@ const path = require('path')
 const PORT = process.env.PORT || 5000
 
 const {Pool} = require('pg');
-const { receiveMessageOnPort } = require('worker_threads');
+
 var pool;
 pool=new Pool({
   connectionString: process.env.DATABASE_URL
