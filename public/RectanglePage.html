@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rectangle</title>
+        <link rel="stylesheet" href="./stylesheets/style.css">
+    </head>
+    <body>
+        <main>
+            <h1>
+                Rectangle database
+            </h1>
+            <section>
+                <form action="/create-rectangle" method="post">
+                    <input type="text" name = "name" value="" placeholder="enter name" required><br>
+                    <input type="text" name = "color" value="" placeholder="enter color" required><br>
+                    <input type="text" name = "width" value="" placeholder="enter width" required><br>
+                    <input type="text" name = "length" value="" placeholder="enter length" required><br>
+                    <input type="text" name = "isSquare" value="" placeholder="(T/F)isSquare" required><br>
+                    <input type="text" name = "isLonger" value="" placeholder="(T/F)length is longer than width" required><br>
+                    <input type="text" name = "isWider" value="" placeholder="(T/F)width is longer than length" required><br>
+                    <input type = "submit" name="sub" value="SERVER"> <br>
+                    
+                </form>
+            </section>
+            <form action="/database">
+                
+                <input type = "submit" value="Display All Rectangles">
+            </form>
+            
+        </main>
+        <script type="text/javascript" src="./RectanglePageJS.js"></script>
+    </body>
+</html>

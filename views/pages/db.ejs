@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%- include ("../partials/header.ejs") %>
+  
 </head>
 
 <body>
 
-<%- include ("../partials/nav.ejs") %>
+
 
 <div class="container">
 <h2>Database Results</h2>
 
 <ul>
-    <% results.forEach(function(r) { %>
-        <li><%= r.id %> - <%= r.name %></li>
+    <% rows.forEach(function(r) { %>
+        <li><a href="/rectangles/<%=r.name%>"><%=r.name%></a> - <%= r.color %></li>
     <% }); %>
 </ul>
+<form action="/rectanglePage.html">
+
+  <input type = "submit" value="Add New rectangle">
+</form>
 
 </div>
 
