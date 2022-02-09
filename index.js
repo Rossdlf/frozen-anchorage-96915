@@ -19,8 +19,8 @@ app.use(express.urlencoded({extended:false}))
   app.get('/database', (req,res)=>{
     var getRectanglesQuery = 'select * from rec';
     pool.query(getRectanglesQuery,(error,result)=> {
-      if(error)
-          res.end(error);
+      //if(error)
+         // res.end(error);
       var results = {'rows':result.rows}
       res.render('pages/db',results);
     })
