@@ -25,6 +25,7 @@ app.use(express.urlencoded({extended:false}))
     //   var results = {'rows':result.rows}
     //   res.render('pages/db',results);
     // })
+    res.send("hi");
   })
   app.get(`/rectangles/:id`,(req,res)=>{
     
