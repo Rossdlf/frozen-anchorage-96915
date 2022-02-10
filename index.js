@@ -20,7 +20,18 @@ app.use(express.urlencoded({extended:false}))
   app.use(express.static(path.join(__dirname, 'public')))
   app.set('views', path.join(__dirname, 'views'))
   app.set('view engine', 'ejs')
-  app.get('/', (req, res) => res.render('pages/index'))
+  app.get('/', (req, res) => {
+    var getRectanglesQuery = 'select * from rec';
+    pool.query(getRectanglesQuery,(error,result)=> {
+      if(error){
+          
+          res.send(error);
+          
+      }
+      var results = {'rows':result.rows}
+      res.render('pages/db',results);
+    })
+  })
   
   app.get('/database', (req,res)=>{
     var getRectanglesQuery = 'select * from rec';
