@@ -6,8 +6,13 @@ const {Pool} = require('pg');
 
 var pool;
 pool=new Pool({
-  connectionString: process.env.DATABASE_URL || "postgress://postgres:rootpassword@localhost/rectangles"
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+
 });
+console.log(process.env.DATABASE_URL);
 
 var app = express()
 app.use(express.json());
@@ -18,7 +23,7 @@ app.use(express.urlencoded({extended:false}))
   app.get('/', (req, res) => res.render('pages/index'))
   
   app.get('/database', (req,res)=>{
-    var getRectanglesQuery = 'select * from rec;';
+    var getRectanglesQuery = 'select * from rec';
     pool.query(getRectanglesQuery,(error,result)=> {
       if(error){
           console.log('hi');
