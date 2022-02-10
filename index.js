@@ -18,14 +18,13 @@ app.use(express.urlencoded({extended:false}))
   app.get('/', (req, res) => res.render('pages/index'))
   
   app.get('/database', (req,res)=>{
-    // var getRectanglesQuery = 'select * from rec';
-    // pool.query(getRectanglesQuery,(error,result)=> {
-    //   if(error)
-    //       res.end(error);
-    //   var results = {'rows':result.rows}
-    //   res.render('pages/db',results);
-    // })
-    res.send("hi");
+    var getRectanglesQuery = 'select * from rec';
+    pool.query(getRectanglesQuery,(error,result)=> {
+      if(error)
+          res.end(error);
+      var results = {'rows':result.rows}
+      res.render('pages/db',results);
+    })
   })
   app.get(`/rectangles/:id`,(req,res)=>{
     
