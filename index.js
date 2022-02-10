@@ -22,7 +22,7 @@ app.use(express.urlencoded({extended:false}))
     pool.query(getRectanglesQuery,(error,result)=> {
       if(error){
           console.log('hi');
-          res.end(error);
+          res.send(error);
           
       }
       var results = {'rows':result.rows}
