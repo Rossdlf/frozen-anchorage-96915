@@ -6,7 +6,7 @@ const {Pool} = require('pg');
 
 var pool;
 pool=new Pool({
-  connectionString: process.env.DATABASE_URL
+  connectionString: process.env.DATABASE_URL || "postgress://postgres:rootpassword@localhost/rectangles"
 });
 
 var app = express()
