@@ -26,7 +26,7 @@ app.use(express.urlencoded({extended:false}))
     var getRectanglesQuery = 'select * from rec';
     pool.query(getRectanglesQuery,(error,result)=> {
       if(error){
-          console.log('hi');
+          
           res.send(error);
           
       }
