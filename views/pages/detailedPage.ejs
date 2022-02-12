@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
-  
-</head>
-
-<body>
-
-
-
-<div class="container">
-    <style>
+  <style>
+      body{
+          background-color: lightblue;
+      }
         p {background-color:<%=rows[0].color %>;
         width:<%=rows[0].width %>px;
         height:<%=rows[0].length %>px;
         border:3px solid black;
         }
-        li {
+        ul {
             font-size: large;
+            font-weight: bold;
         }
         input[type="submit"]{
             background-color: rgb(14, 191, 250);
@@ -26,6 +21,15 @@
         }
         
       </style>
+  
+</head>
+
+<body>
+
+
+
+<div class="container">
+    
 <p ><%=rows[0].name %></p>
 
 <ul>
