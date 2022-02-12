@@ -31,9 +31,9 @@
 <ul>
     
     <% rows.forEach(function(r) { %>
-        <li>name:<%= r.name %> <br>color: <%= r.color %> <br>width: <%= r.width %> <br> length:<%= r.length %> 
+        name:<%= r.name %> <br>color: <%= r.color %> <br>width: <%= r.width %> <br> length:<%= r.length %> 
             <br> is it a square? <%= r.issquare %> <br> is it longer? <%= r.islonger %> <br> 
-            is it wider? <%= r.iswider %><br></li>
+            is it wider? <%= r.iswider %><br>
     <% }); %>
 </ul>
 <form action="/delete-rectangle" method="post">
