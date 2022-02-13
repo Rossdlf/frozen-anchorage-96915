@@ -66,7 +66,7 @@ app.use(express.urlencoded({extended:false}))
     //console.log(insertRectangleQuery);
     pool.query(insertRectangleQuery,(error,result)=>{
       if(error){
-        res.render('pages/error');
+        console.log(error);
       }
       res.render('pages/done');
     })
@@ -78,7 +78,7 @@ app.use(express.urlencoded({extended:false}))
     
     pool.query(deleteRectangleQuery,(error,result)=>{
       if(error){
-        res.render('pages/error');
+        res.end(error);
       }
       res.render('pages/done');
     })
@@ -97,7 +97,7 @@ app.use(express.urlencoded({extended:false}))
     console.log(modifyRectangleQuery);
     pool.query(modifyRectangleQuery,(error,result)=>{
       if(error){
-        res.render('pages/error');
+        console.log(error);
       }
       res.render('pages/done');
     })
